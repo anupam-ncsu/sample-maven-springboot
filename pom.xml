@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.techhub</groupId>
+   <artifactId>frictionless</artifactId>
+   <version>0.0.1-SNAPSHOT</version>
+   <name>springboot-webapp</name>
+   <description>Demo project for Spring Boot</description>
+
+   <!-- <packaging>war</packaging> -->
+   <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>2.2.2.RELEASE</version>
+   </parent>
+
+   <properties>
+      <!-- JAVA -->
+      <java.version>1.8</java.version>
+      <!-- TECHHUB:MANDATORY:DEV :: SONAR -->
+      <sonar.projectKey>TH_frictionless-springboot-webapp</sonar.projectKey>
+      <sonar.projectName>TH_frictionless-springboot-webapp</sonar.projectName>
+      <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+      <sonar.sources>src</sonar.sources>
+      <sonar.ws.timeout>6000</sonar.ws.timeout>
+      <sonar.exclusions>com/techhub/frictionless/app,com/techhub/frictionless/controller,com/techhub/frictionless/models,</sonar.exclusions>
+      <sonar.junit.reportPaths>target/surefire-reports,target/failsafe-reports</sonar.junit.reportPaths>
+      <!-- sonar.projectVersion: Defaults to pom project version -->
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <!-- tag::actuator[] -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>
+      <!-- end::actuator[] -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      </dependency>
+      <!-- tag::tests[] -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+         <exclusions>
+            <exclusion>
+               <groupId>org.junit.vintage</groupId>
+               <artifactId>junit-vintage-engine</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+      <!-- end::tests[] -->
+   </dependencies>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+      </plugins>
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+         </resource>
+      </resources>
+      <pluginManagement>
+         <plugins>
+            <plugin>
+                  <groupId>org.sonarsource.scanner.maven</groupId>
+                  <artifactId>sonar-maven-plugin</artifactId>
+                  <version>3.4.0.905</version>
+            </plugin>
+         </plugins>
+   </pluginManagement>
+   </build>
+</project>

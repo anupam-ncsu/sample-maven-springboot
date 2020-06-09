@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <title>Frictionless Web Application</title>
+    </head>
+    <body>
+        <h1>
+            <span th:text="${name}"></span>
+            <a th:href="@{/list}" >Click here</a> to view your profile.
+        </h1>
+    </body>
+</html>

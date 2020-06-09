@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Frictionless Web Application</title>
+</head>
+<body>
+    <font color="red"><span th:text="${errorMessage}"></span></font>
+    <form action=# th:action="@{/login}" method="post">
+        Name : <input type="text" th:name="name" />
+        Password : <input type="password" th:name="password" /> 
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
